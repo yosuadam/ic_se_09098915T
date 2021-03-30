@@ -26,14 +26,17 @@ int main() {
 	
 	//Instalar la función hw_irq_vector_0x11_handler como
 	// manejador de la interrupción de nivel 1
+	//OK
 	leon3_install_handler(0x11, hw_irq_vector_0x11_handler);
 	
 	// Ejercicio 7
 	// Instalar función hw_irq_vector_0x82_handler
+	//OK
 	leon3_install_handler(0x82, hw_irq_vector_0x82_handler);
 	
 	//Desenmascarar la interrupcion de nivel 1 (correspondiente
 	//al vector 17, es decir el vector 0x11)
+	//OK
 	leon3_unmask_irq(1);
 	
 	//Habilitar las interrupciones

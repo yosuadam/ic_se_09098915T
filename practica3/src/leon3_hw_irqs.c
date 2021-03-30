@@ -21,6 +21,7 @@ uint8_t leon3_sparc_force_irq(uint8_t irq_level) {
 		// irq_level=15 bit mayor peso
 		uint32_t mascara = 1;
 		mascara = mascara << irq_level;
+		//OK
 		*LEON3_IFORCE |= mascara;
 	} else
 		error = 1;
@@ -42,6 +43,7 @@ uint8_t leon3_unmask_irq(uint8_t irq_level) {
 		// irq_level=15 bit mayor peso
 		uint32_t mascara = 1;
 		mascara = mascara << irq_level;
+		//Puedes usar la máscara bit también
 		*LEON3_IMASK |= mascara;
 
 	} else
@@ -62,6 +64,7 @@ uint8_t leon3_mask_irq(uint8_t irq_level) {
 		uint32_t mascara = 1;
 		mascara = mascara << irq_level;
 		mascara = ~mascara;
+		//OK
 		*LEON3_IMASK &= mascara;
 	} else
 		error = 1;
